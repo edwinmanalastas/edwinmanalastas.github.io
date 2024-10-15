@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
+
+:root {
+    --background: #010f19;
+    --main-text: #ced7f5;
+    --highlight: #2690df;
+    --gray: #8591ae; }
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'NTR';
+    font-style: normal;
+    font-weight: 400;
+    box-sizing: border-box;
+    /* temporarily add borders to all elements 
+    border: 0.2px solid white; */
+} 
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+nav {
+    width: 100%;
+    height: 7vh;
+    /* makes sure navigation stays while scrolling */
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: var(--background);
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.nav-container .logo span {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--main-text);
+    margin-left: 0 10px; /* move name more to the right */
+}
+
+.nav-container .links {
+    display: flex;
+} 
+
+.nav-container .social-links {
+    display: flex;
+}
+
+.nav-container .links a {
+    font-size: 16px;
+    color: var(--main-text);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: color 0.3s linear;
+
+    /* adding underline animation */
+    position: relative; 
+    overflow: hidden; 
+    transition: color 0.3s linear;
+}
+
+.nav-container .social-links i {
+    font-size: 17px;
+    color: var(--main-text);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: color 0.3s linear;
+}
+
+.nav-container .links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--highlight); /* Color of the underline */
+    transition: width 0.3s ease; /* Animate the width on hover */
+}
+
+/* On hover, increase the width to 100% to show the underline */
+.nav-container .links a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.nav-container .links a:hover, .social-links i:hover {
+    color: var(--highlight);
+}
+
+section {
+    margin-top: 18px; /* increase to make section lower */
+    width: 100%;
+    height: 90vh; /* height until next section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px; /* max box width for content */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.main-container .image {
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.main-container .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+} 
+
+@keyframes animate {
+    0% {
+        scale: 1; 
+    }    50% {
+        scale: 1.05; 
+    }    100% {
+        scale: 1; 
+    }
+}
+
+.main-container .content {
+    color: var(--main-text);
+    margin-top: 0; /* make content higher */
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 5rem;
+    line-height: 0.5;
+    display: inline-block;
+    border-right: 5px solid var(--highlight);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 12ch;
+    animation: 
+        typing 1.5s steps(12) 0.7s, /* 1 second delay */
+        cursor 1s ease-in-out infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+    50% { 
+        border-color: transparent
+    }
+}
+/* typing effect */
+@keyframes typing {
+    from {
+        width: 0 
+    }
+    to {
+        width: 12ch
+    }
+}
+
+.content h1 span {
+    font-weight: 700;
+    color: var(--highlight);
+    line-height: 1;
+}
+
+.content h2 {
+    margin-top: 10px;
+    font-size: 3rem;
+    font-weight: 500;
+    position: relative;
+    color: var(--gray);
+    line-height: 0;
+}
+
+.content p {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.5;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.magnet {
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: var(--highlight);
+    width: 150px;
+    height: 70px; 
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.magnet .text {
+    font-weight: 600;
+}
+
+/* Skills */
+
+.skills {
+    color: var(--main-text);
+    margin-top: -5vh; /* gap between "say hi" and "skills" */
+}
+
+.skills h1 { 
+    text-align: center;
+    font-size: 36px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.skils .container {
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 100px;
+    padding-right: 100px
+
+}
+.skills .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create four columns with equal width */
+    grid-gap: 20px; /* Adjust the gap between grid items */
+}
+
+.skills .skill {
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.skills i { /* icons */
+    font-size: 40px;
+    margin-bottom: 1px;
+    color: var(--highlight);    ;
+    transition: color 0.5s ease;
+}
+
+.skills h2 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.skills .skill:hover i {
+    color: #FFFFFF;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    padding-bottom: 50px;
+    background-color: var(--background); /* Same background as the page */
+    color: var(--gray); /* Match the color scheme */
+    font-size: 16px;
+    position: relative; /* Allows footer to be at the bottom */
+    width: 100%;
+}
+
+footer p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+@media(max-width: 860px) {
+
+    /* remove nav bar displays */
+    .logo { display: none; } 
+    .nav-container .links { display:none; }
+    .nav-container .social-links { margin-left: auto; padding-right: 15px }
+    .nav-container .social-links i { font-size: 20px; }
+
+    /* make section higher and make gap technologies lower*/
+    section { margin-top: -50px; margin-bottom: 50px;}
+    
+    /* change text sizes */
+    .content h1 { font-size: 2rem; border-right: 2px solid var(--highlight);}
+    .content h2 { font-size: 1.5rem; }
+    .content p  { font-size: 16px; margin-top: 25px; }
+    .content button { font-size: 20px;}
+
+    /* skills */
+    .skills { margin-top: -20vh;}
+    .skills h1 { margin-bottom: 20px;}
+    .skills i { font-size: 30px;}
+    .skills h2 { font-size: 15px}
+    .skills .row { grid-template-columns: repeat(4, 1fr); grid-gap: 0px;}
+}
