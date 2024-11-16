@@ -415,7 +415,7 @@ input:checked + label .description {
 
 
 .card[for ="c4"] {
-    background-image: url("images/2048.jpeg");
+    background-image: url("images/2048.png");
     background-size: cover;
     background-position: center;
 }
