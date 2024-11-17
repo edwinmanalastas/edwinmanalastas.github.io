@@ -414,14 +414,14 @@ input:checked + label .description {
 
 
 .card[for ="c3"] {
-    background-image: url("images/algorithm.png");
+    background-image: url("images/2048.png");
     background-size: cover;
     background-position: center;
 }
 
 
 .card[for ="c4"] {
-    background-image: url("images/2048.png");
+    background-image: url("images/algorithm.png");
     background-size: cover;
     background-position: center;
 }
