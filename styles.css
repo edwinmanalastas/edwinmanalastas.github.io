@@ -6,6 +6,11 @@
     --highlight: #2690df;
     --gray: #8591ae; }
 
+/* scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -218,6 +223,7 @@ section {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    margin-bottom: -100px; /* gap between say hi and skills */
 }
 
 .magnet .text {
@@ -229,6 +235,7 @@ section {
 .skills {
     min-height: 750px; /* prevent overlapping */
     color: var(--main-text);
+    margin-bottom: 20px;
 }
 
 .skills h1 { 
@@ -236,6 +243,7 @@ section {
     font-size: 36px;
     padding-bottom: 10px;
     margin-bottom: 50px;
+    margin-top: 100px;
 }
 
 .skils .container {
@@ -283,16 +291,14 @@ section {
 .projects {
     min-height: 800px;
     color: var(--main-text);
-    margin-top: -5vh; /* gap between "say hi" and "skills" */
     flex-direction: column;
 }
 
 .projects h1 { 
     text-align: center;
-    margin-top: -10vh; /* gap between skills and "Projects" */
     font-size: 36px;
     padding-bottom: 10px;
-    margin-bottom: 60px; /* GAP between header and container */
+    margin-bottom: 60px; /* GAP between h1 and container */
 }
 
 
@@ -467,8 +473,8 @@ footer p {
     .nav-container .social-links { margin-left: auto; padding-right: 15px }
     .nav-container .social-links i { font-size: 20px; }
 
-    /* make section higher and make gap technologies lower*/
-    section { margin-top: -50px; margin-bottom: 50px;}
+    /* make section higher and make skills lower*/
+    section { margin-top: -80px; margin-bottom: 50px;}
     
     /* change text sizes */
     .content h1 { font-size: 2rem; border-right: 2px solid var(--highlight);}
