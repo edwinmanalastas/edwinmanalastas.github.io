@@ -132,10 +132,6 @@ section {
     margin-bottom: 5px;
 }
 
-.main-container .image:hover {
-    animation: animate 1.5s ease-in-out infinite;
-} 
-
 @keyframes animate {
     0% {
         scale: 1; 
@@ -289,6 +285,7 @@ section {
 /* projects main */
 
 .projects {
+    margin-top: 150px; /* gap between Skills and "Projects" */
     min-height: 800px;
     color: var(--main-text);
     flex-direction: column;
@@ -425,6 +422,7 @@ input:checked + label .project-details {
     transition-delay: 0.5s; 
 }
 
+/* project images */
 .card[for ="c1"] {
     background-image: url("images/solid.png");
     background-size: cover;
@@ -433,7 +431,7 @@ input:checked + label .project-details {
 
 
 .card[for ="c2"] {
-    background-image: url("images/portfolio.png");
+    background-image: url("images/bot.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -447,7 +445,7 @@ input:checked + label .project-details {
 
 
 .card[for ="c4"] {
-    background-image: url("images/algorithm.png");
+    background-image: url("images/android.png");
     background-size: cover;
     background-position: center;
 }
@@ -472,6 +470,8 @@ input:checked + label .project-details {
     color: var(--highlight); /* Optional: change color on hover */
 }
 
+/* projects part 2 */
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -482,28 +482,16 @@ input:checked + label .project-details {
     margin: 0 auto;
 
     box-sizing: border-box;
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 50vh;
-}
-
-.border-blur {
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    background: transparent;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    filter: blur(50px);
+    margin-bottom: 150px;
 }
 
 .box {
     position: relative;
-    width: 260px;
-    height: 360px;
+    width: 260px; /* size of cards */
+    height: 360px; /* size of cards */
     background: rgba(0,0,0, 0.75);
     border-radius: 20px;
     display: flex;
@@ -512,15 +500,7 @@ input:checked + label .project-details {
     overflow: hidden;
 }
 
-.border-blur::before,
-.border-blur::after {
-    border-radius: 50%;
-    height: 400px !important;
-    width: 500px !important;
-}
-
-.box::after,
-.border-blur::after {
+.box::after {
     content: "";
     position: absolute;
     width: 500px;
@@ -535,8 +515,7 @@ input:checked + label .project-details {
     animation-delay: -2s;
 }
 
-.box::before,
-.border-blur::before {
+.box::before {
     content: "";
     position: absolute;
     width: 500px;
@@ -572,6 +551,60 @@ input:checked + label .project-details {
     z-index: 2;
     color: #fff;
 }
+
+.card-content {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    padding: 20px;
+    color: var(--main-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--main-text);
+}
+
+.card-links {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    gap: 10px;
+}
+
+.card-links a {
+    color: var(--highlight);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.card-links a:hover {
+    color: #ffffff; 
+}
+
+.card-tech {
+    font-size: 0.9rem; 
+    color: var(--highlight);
+    padding-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+}
+
 
 /* footer */
 
@@ -637,7 +670,7 @@ footer p {
         height: 200px; /* height before opening */
         margin: 10px 0; /* Space between cards */
         border-radius: 2rem;
-        position: relative; /* Allows absolute positioning within the card */
+        position: relative; 
     }
 
     input:checked + label {
@@ -646,17 +679,17 @@ footer p {
     }
 
     .card > .row {
-        align-items: center; /* Align icon and description horizontally */
+        align-items: center; /* Align icon and description */
     }
 
     .card > .row > .icon {
         z-index: 2;
-        width: 20px; /* Smaller icon size */
+        width: 20px; /* icon size */
         height: 20px;
         margin: 2px 0;
         position: absolute;
-        bottom: 10px; /* Adjust distance from the bottom */
-        left: 10px; /* Adjust distance from the left */
+        bottom: 10px; /* distance from the bottom */
+        left: 10px; /* distance from the left */
     }
 
     .card > .row > .description {
@@ -664,16 +697,16 @@ footer p {
         z-index: 2;
         top: -3.5px; /* Distance from the top, make 10 for p */
         left: 5px; /* Distance from the left */
-        width: auto; /* Allow it to take up as much space as needed */
-        font-size: 0.8rem; /* Smaller font size for description */
+        width: auto; 
+        font-size: 0.8rem;
 
         margin-left: 40px; /* Space between icon and description */
-        font-size: 0.8rem; /* Smaller font size for description */
+        font-size: 0.8rem; 
         width: calc(100% - 80px); /* Adjust width to fit next to icon */
 
         
-        width: 100%; /* Full width for description */
-        opacity: 1; /* opacity 1 to make it appear default */
+        width: 100%; 
+        opacity: 1; 
         transform: translateY(0); /* Remove the initial transform for downward expansion */
         transition-delay: .3s;
     }
@@ -681,9 +714,12 @@ footer p {
     .description h4 {
         font-size: 1.2rem;
         font-weight: 600;
+        margin-top: 3px;
         margin-bottom: 5px;
         /* line-height: 0px; for p */
     }
+
+    .description p { font-size: 15px; margin-top: 3px; font-weight: bold;}
 
     .card-icons {
         /* move icons to desired spot */
@@ -696,4 +732,24 @@ footer p {
         font-size: 15px; /* Smaller icon size */
     }
 
+    .projects {
+        margin-top: 0px; }
+
+    /* projects part two */
+    .cards-container {
+        grid-template-columns: 1fr; /* single column */
+        margin-top: 30px;
+        gap: 30px;
+        padding: 10px;
+        justify-content: center;
+    }
+    .box { width: 70%; max-width: 400px; margin: 0 auto; height: 250px}
+    .card-content { padding: 35px;}
+    .card-title {font-size: 1.3rem; }
+    .card-description { font-size: 0.9rem; line-height: 1;}
+    .card-links { bottom: 20px; right: 20px; }
+    .card-links a { font-size: 1.3rem; transition: color 0.3s ease; }
+    .card-tech { font-size: 0.9rem }
+    
+        
 }
